@@ -7,3 +7,11 @@ E:\3_PC软件工具\串口工具\串口工具\obj\x86\Debug\GenerateResource.rea
 E:\3_PC软件工具\串口工具\串口工具\obj\x86\Debug\GenerateResource.write.1.tlog
 E:\3_PC软件工具\串口工具\串口工具\obj\x86\Debug\串口工具.exe
 E:\3_PC软件工具\串口工具\串口工具\obj\x86\Debug\串口工具.pdb
+D:\1file\zigbee课程设计\基于CC2530的宠物屋的环境监测系统的设计\UartTool\串口工具\obj\x86\Debug\串口工具.exe
+D:\1file\zigbee课程设计\基于CC2530的宠物屋的环境监测系统的设计\UartTool\串口工具\obj\x86\Debug\串口工具.pdb
+D:\1file\zigbee课程设计\基于CC2530的宠物屋的环境监测系统的设计\UartTool\串口工具\bin\Debug\串口工具.exe
+D:\1file\zigbee课程设计\基于CC2530的宠物屋的环境监测系统的设计\UartTool\串口工具\bin\Debug\串口工具.pdb
+D:\1file\zigbee课程设计\基于CC2530的宠物屋的环境监测系统的设计\UartTool\串口工具\obj\x86\Debug\串口工具.Form1.resources
+D:\1file\zigbee课程设计\基于CC2530的宠物屋的环境监测系统的设计\UartTool\串口工具\obj\x86\Debug\串口工具.Properties.Resources.resources
+D:\1file\zigbee课程设计\基于CC2530的宠物屋的环境监测系统的设计\UartTool\串口工具\obj\x86\Debug\串口工具.csproj.GenerateResource.Cache
+D:\1file\zigbee课程设计\基于CC2530的宠物屋的环境监测系统的设计\UartTool\串口工具\obj\x86\Debug\串口工具.csprojResolveAssemblyReference.cache

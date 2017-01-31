@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssl_tx = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssl_rx = new System.Windows.Forms.ToolStripStatusLabel();
@@ -56,25 +55,12 @@
             this.tb_read = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tb_send = new System.Windows.Forms.TextBox();
+            this.bt_send = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.tb_record = new System.Windows.Forms.TextBox();
-            this.cb_record = new System.Windows.Forms.CheckBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.cb_n = new System.Windows.Forms.CheckBox();
-            this.cb_r = new System.Windows.Forms.CheckBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.tb_interval = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cb_autoSend = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bt_send = new System.Windows.Forms.Button();
             this.hSerialPort = new System.IO.Ports.SerialPort(this.components);
             this.timer_send = new System.Windows.Forms.Timer(this.components);
             this.timer_ref = new System.Windows.Forms.Timer(this.components);
@@ -86,22 +72,16 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.tssl_tx,
             this.tssl_rx,
@@ -113,43 +93,34 @@
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.IsLink = true;
-            this.toolStripStatusLabel2.LinkVisited = true;
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(227, 17);
-            this.toolStripStatusLabel2.Text = "http://www.github.com/fml927/uartTool";
-            this.toolStripStatusLabel2.Click += new System.EventHandler(this.toolStripStatusLabel2_Click);
-            // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(41, 17);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(32, 17);
             this.toolStripStatusLabel3.Text = "      ";
             // 
             // tssl_tx
             // 
             this.tssl_tx.Name = "tssl_tx";
-            this.tssl_tx.Size = new System.Drawing.Size(59, 17);
+            this.tssl_tx.Size = new System.Drawing.Size(58, 17);
             this.tssl_tx.Text = "Tx:0,Rx:0";
             // 
             // tssl_rx
             // 
             this.tssl_rx.Name = "tssl_rx";
-            this.tssl_rx.Size = new System.Drawing.Size(29, 17);
+            this.tssl_rx.Size = new System.Drawing.Size(32, 17);
             this.tssl_rx.Text = "Rx:0";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(41, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(32, 17);
             this.toolStripStatusLabel1.Text = "      ";
             // 
             // tssl_status
             // 
             this.tssl_status.Name = "tssl_status";
-            this.tssl_status.Size = new System.Drawing.Size(59, 17);
+            this.tssl_status.Size = new System.Drawing.Size(57, 17);
             this.tssl_status.Text = "Closed...";
             // 
             // text_com
@@ -166,7 +137,7 @@
             0,
             0});
             this.text_com.Name = "text_com";
-            this.text_com.Size = new System.Drawing.Size(69, 21);
+            this.text_com.Size = new System.Drawing.Size(79, 21);
             this.text_com.TabIndex = 4;
             this.text_com.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.text_com.Value = new decimal(new int[] {
@@ -195,7 +166,7 @@
             "0"});
             this.text_stop.Location = new System.Drawing.Point(101, 131);
             this.text_stop.Name = "text_stop";
-            this.text_stop.Size = new System.Drawing.Size(69, 20);
+            this.text_stop.Size = new System.Drawing.Size(79, 20);
             this.text_stop.TabIndex = 1;
             this.text_stop.Text = "1";
             // 
@@ -242,7 +213,7 @@
             "偶校验"});
             this.text_parity.Location = new System.Drawing.Point(101, 104);
             this.text_parity.Name = "text_parity";
-            this.text_parity.Size = new System.Drawing.Size(69, 20);
+            this.text_parity.Size = new System.Drawing.Size(79, 20);
             this.text_parity.TabIndex = 1;
             this.text_parity.Text = "无";
             // 
@@ -255,7 +226,7 @@
             "6"});
             this.text_data.Location = new System.Drawing.Point(101, 77);
             this.text_data.Name = "text_data";
-            this.text_data.Size = new System.Drawing.Size(69, 20);
+            this.text_data.Size = new System.Drawing.Size(79, 20);
             this.text_data.TabIndex = 1;
             this.text_data.Text = "8";
             // 
@@ -276,7 +247,7 @@
             "128000"});
             this.text_baud.Location = new System.Drawing.Point(101, 50);
             this.text_baud.Name = "text_baud";
-            this.text_baud.Size = new System.Drawing.Size(69, 20);
+            this.text_baud.Size = new System.Drawing.Size(79, 20);
             this.text_baud.TabIndex = 1;
             this.text_baud.Text = "115200";
             // 
@@ -340,7 +311,7 @@
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainer2.Panel2.Controls.Add(this.bt_send);
             this.splitContainer2.Panel2.Controls.Add(this.panel6);
             this.splitContainer2.Panel2.Controls.Add(this.panel4);
             this.splitContainer2.Size = new System.Drawing.Size(704, 531);
@@ -358,13 +329,14 @@
             this.groupBox1.Size = new System.Drawing.Size(694, 391);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "接收数据窗口";
+            this.groupBox1.Text = "打印张数";
             // 
             // bt_clear
             // 
-            this.bt_clear.Location = new System.Drawing.Point(594, 0);
+            this.bt_clear.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.bt_clear.Location = new System.Drawing.Point(560, 0);
             this.bt_clear.Name = "bt_clear";
-            this.bt_clear.Size = new System.Drawing.Size(100, 19);
+            this.bt_clear.Size = new System.Drawing.Size(128, 19);
             this.bt_clear.TabIndex = 5;
             this.bt_clear.Text = "清空";
             this.bt_clear.UseVisualStyleBackColor = true;
@@ -373,6 +345,7 @@
             // tb_read
             // 
             this.tb_read.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_read.Font = new System.Drawing.Font("宋体", 249.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tb_read.Location = new System.Drawing.Point(3, 17);
             this.tb_read.Multiline = true;
             this.tb_read.Name = "tb_read";
@@ -397,38 +370,16 @@
             this.panel5.Size = new System.Drawing.Size(704, 10);
             this.panel5.TabIndex = 2;
             // 
-            // groupBox2
+            // bt_send
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.tb_send);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(10, 10);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(694, 116);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "发送数据窗口";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(594, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 19);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "清空";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tb_send
-            // 
-            this.tb_send.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_send.Location = new System.Drawing.Point(3, 17);
-            this.tb_send.Multiline = true;
-            this.tb_send.Name = "tb_send";
-            this.tb_send.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tb_send.Size = new System.Drawing.Size(688, 96);
-            this.tb_send.TabIndex = 0;
-            this.tb_send.Text = "http://www.github.com/fml927/uartTool";
+            this.bt_send.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.bt_send.Location = new System.Drawing.Point(16, 16);
+            this.bt_send.Name = "bt_send";
+            this.bt_send.Size = new System.Drawing.Size(667, 100);
+            this.bt_send.TabIndex = 1;
+            this.bt_send.Text = "新的打印计数";
+            this.bt_send.UseVisualStyleBackColor = true;
+            this.bt_send.Click += new System.EventHandler(this.bt_send_Click);
             // 
             // panel6
             // 
@@ -467,131 +418,18 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox6);
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox5);
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox4);
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox3);
             this.splitContainer1.Size = new System.Drawing.Size(932, 531);
             this.splitContainer1.SplitterDistance = 704;
             this.splitContainer1.TabIndex = 1;
             // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.tb_record);
-            this.groupBox6.Controls.Add(this.cb_record);
-            this.groupBox6.Location = new System.Drawing.Point(12, 266);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(200, 51);
-            this.groupBox6.TabIndex = 8;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "接收数据自动写入到文件";
-            // 
-            // tb_record
-            // 
-            this.tb_record.Location = new System.Drawing.Point(60, 20);
-            this.tb_record.Name = "tb_record";
-            this.tb_record.Size = new System.Drawing.Size(134, 21);
-            this.tb_record.TabIndex = 7;
-            this.tb_record.Text = "record.txt";
-            // 
-            // cb_record
-            // 
-            this.cb_record.AutoSize = true;
-            this.cb_record.Location = new System.Drawing.Point(15, 23);
-            this.cb_record.Name = "cb_record";
-            this.cb_record.Size = new System.Drawing.Size(48, 16);
-            this.cb_record.TabIndex = 7;
-            this.cb_record.Text = "写入";
-            this.cb_record.UseVisualStyleBackColor = true;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.cb_n);
-            this.groupBox5.Controls.Add(this.cb_r);
-            this.groupBox5.Location = new System.Drawing.Point(12, 323);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(200, 53);
-            this.groupBox5.TabIndex = 8;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "行末发送";
-            // 
-            // cb_n
-            // 
-            this.cb_n.AutoSize = true;
-            this.cb_n.Location = new System.Drawing.Point(108, 23);
-            this.cb_n.Name = "cb_n";
-            this.cb_n.Size = new System.Drawing.Size(78, 16);
-            this.cb_n.TabIndex = 8;
-            this.cb_n.Text = "\\n (0x0A)";
-            this.cb_n.UseVisualStyleBackColor = true;
-            // 
-            // cb_r
-            // 
-            this.cb_r.AutoSize = true;
-            this.cb_r.Location = new System.Drawing.Point(15, 23);
-            this.cb_r.Name = "cb_r";
-            this.cb_r.Size = new System.Drawing.Size(78, 16);
-            this.cb_r.TabIndex = 7;
-            this.cb_r.Text = "\\r (0x0D)";
-            this.cb_r.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.tb_interval);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.cb_autoSend);
-            this.groupBox4.Location = new System.Drawing.Point(12, 382);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 53);
-            this.groupBox4.TabIndex = 8;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "自动发送间隔";
-            // 
-            // tb_interval
-            // 
-            this.tb_interval.Location = new System.Drawing.Point(103, 20);
-            this.tb_interval.Name = "tb_interval";
-            this.tb_interval.Size = new System.Drawing.Size(65, 21);
-            this.tb_interval.TabIndex = 7;
-            this.tb_interval.Text = "100";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(174, 24);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(17, 12);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "ms";
-            // 
-            // cb_autoSend
-            // 
-            this.cb_autoSend.AutoSize = true;
-            this.cb_autoSend.Location = new System.Drawing.Point(10, 23);
-            this.cb_autoSend.Name = "cb_autoSend";
-            this.cb_autoSend.Size = new System.Drawing.Size(72, 16);
-            this.cb_autoSend.TabIndex = 6;
-            this.cb_autoSend.Text = "自动发送";
-            this.cb_autoSend.UseVisualStyleBackColor = true;
-            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.bt_send);
             this.panel2.Location = new System.Drawing.Point(5, 440);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(212, 81);
             this.panel2.TabIndex = 5;
-            // 
-            // bt_send
-            // 
-            this.bt_send.Location = new System.Drawing.Point(21, 19);
-            this.bt_send.Name = "bt_send";
-            this.bt_send.Size = new System.Drawing.Size(171, 43);
-            this.bt_send.TabIndex = 1;
-            this.bt_send.Text = "发送";
-            this.bt_send.UseVisualStyleBackColor = true;
-            this.bt_send.Click += new System.EventHandler(this.bt_send_Click);
             // 
             // hSerialPort
             // 
@@ -615,7 +453,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "串口工具";
+            this.Text = "Print Paper";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
@@ -629,20 +467,11 @@
             this.splitContainer2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -670,15 +499,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button bt_send;
         private System.IO.Ports.SerialPort hSerialPort;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
-        private System.Windows.Forms.TextBox tb_interval;
-        private System.Windows.Forms.CheckBox cb_autoSend;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.CheckBox cb_n;
-        private System.Windows.Forms.CheckBox cb_r;
-        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Timer timer_send;
         private System.Windows.Forms.Timer timer_ref;
         private System.Windows.Forms.ToolStripStatusLabel tssl_tx;
@@ -689,17 +510,9 @@
         private System.Windows.Forms.TextBox tb_read;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox tb_send;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox tb_record;
-        private System.Windows.Forms.CheckBox cb_record;
         private System.Windows.Forms.Label label6;
-
-
     }
 }
 

@@ -24,9 +24,7 @@ namespace 串口工具
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            tb_send.Focus();
-            tb_send.TabIndex = 0;
-            tb_send.TabStop = true;
+
             thRead = new Thread( new ThreadStart(thReadThread));
             bt_send.Enabled = false; //禁能发送按钮
         }
@@ -49,13 +47,7 @@ namespace 串口工具
                 
                 //2、线程处理
                 thRead.Suspend();//接收线程挂起
-                if (cb_record.Checked)
-                {
-                    if (stwHandle != null)
-                    {
-                        stwHandle.Close();
-                    }
-                }
+                
                                 
                 //3、显示处理
                 //关闭串口后 修改配置
@@ -155,15 +147,9 @@ namespace 串口工具
                     thRead.Resume();
                 }
 
-                if ( (cb_record.Checked) )
-                {
-                    stwHandle = new StreamWriter(tb_record.Text, true, Encoding.Unicode);
-                    stwHandle.Write("\r\n" + DateTime.Now.ToLongDateString() + DateTime.Now.ToLongTimeString() + "\r\n");
-                }
-                else
-                {
+            
                     stwHandle = null;
-                }
+                
 
                 //
                 text_baud.Enabled = false;
@@ -192,6 +178,7 @@ namespace 串口工具
 
                 if (TempStr!="")
                 {
+                    readStr = "";
                     readStr += TempStr;
                     if (stwHandle != null)
                     {
@@ -203,6 +190,7 @@ namespace 串口工具
 
         private void timer_ref_Tick(object sender, EventArgs e)
         {
+            tb_read.Text = "";
             tb_read.Text = readStr;
             tssl_rx.Text = "Rx: " + readStr.Length.ToString();
             try
@@ -214,47 +202,18 @@ namespace 串口工具
             }catch(Exception ee)
             {
             }
+            
         }
         
         string strSend = "";
         UInt32 SendLength = 0;
         private void bt_send_Click(object sender, EventArgs e)
         {
-            strSend = tb_send.Text;
-            if (cb_r.Checked)
-            {
-                strSend += "\r";
-            }
-            if (cb_n.Checked)
-            {
-                strSend += "\n";
-            }
-
+            //strSend = tb_send.Text;
+            strSend = "a";
             if (strSend == "")
             {
                 MessageBox.Show("发送数据不能为空！");
-            }
-
-            //自动发送
-            if (cb_autoSend.Checked)
-            {
-                timer_send.Interval = 100;
-                int interval = 100;
-                if (int.TryParse(tb_interval.Text, out  interval))
-                {
-                    timer_send.Interval = interval;    
-                }
-
-                timer_send.Enabled = !timer_send.Enabled;  //取反
-
-                if (timer_send.Enabled)
-                {
-                    bt_send.Text = "关闭 自动发送";
-                }
-                else
-                {
-                    bt_send.Text = "发送";
-                }
             }
             //单次发送
             else
@@ -302,10 +261,7 @@ namespace 串口工具
                 thRead.Abort();
                 thRead.Join();
 
-                if ((cb_record.Checked) && (stwHandle != null))
-                {
-                    stwHandle.Close();
-                }
+              
                 hSerialPort.Close();
 
             }catch(Exception ee)
@@ -314,18 +270,22 @@ namespace 串口工具
            
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            tb_send.Text = "";
-            SendLength = 0;
-            tssl_tx.Text = "Tx: 0";
-        }
 
         private void label6_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
                 "设置参数可以手动修改，实际是否可以设置成功取决于串口设备和其驱动！比如：使用CP2102的USB转串口可以设置1M或2M的波特率！电脑自带的串口就不可以！",
                 "帮助");
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click_1(object sender, EventArgs e)
+        {
+
         }
 
         private void toolStripStatusLabel2_Click(object sender, EventArgs e)
